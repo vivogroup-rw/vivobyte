@@ -47,24 +47,57 @@ document.addEventListener('DOMContentLoaded', () => {
         discoveryForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            const businessName = this.querySelector('input[placeholder="Your Brand Name"]').value;
-            const email = this.querySelector('input[type="email"]').value;
-            const projectType = this.querySelector('select').value;
-            const goals = this.querySelector('textarea').value;
-            const timeline = this.querySelectorAll('select')[1].value;
-            const budget = this.querySelectorAll('select')[2].value;
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerText;
 
-            const subject = encodeURIComponent(`Project Discovery: ${businessName}`);
-            const body = encodeURIComponent(
-                `Brand: ${businessName}\n` +
-                `Contact: ${email}\n` +
-                `Type: ${projectType}\n` +
-                `Timeline: ${timeline}\n` +
-                `Budget: ${budget}\n\n` +
-                `Goals:\n${goals}`
-            );
+            // UI Feedback
+            submitBtn.innerText = 'Processing...';
+            submitBtn.disabled = true;
 
-            window.location.href = `mailto:vivogroup.rw@gmail.com?subject=${subject}&body=${body}`;
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData.entries());
+
+            // Using Formspree - Direct Email Endpoint
+            fetch('https://formspree.io/vivogroup.rw@gmail.com', {
+                method: 'POST',
+                body: JSON.stringify(data),
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    showSuccessModal();
+                    discoveryForm.reset();
+                } else {
+                    return response.json().then(errorData => {
+                        console.error('Submission Error:', errorData);
+                        alert("Submission failed. This usually happens if the form endpoint isn't activated. Please try again later or use WhatsApp.");
+                    });
+                }
+            }).catch(error => {
+                console.error('Fetch Error:', error);
+                alert("Connection error. Please check your internet or reach out via WhatsApp.");
+            }).finally(() => {
+                submitBtn.innerText = originalText;
+                submitBtn.disabled = false;
+            });
         });
     }
 });
+
+function showSuccessModal() {
+    const modal = document.getElementById('successModal');
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden'; // Prevent scroll
+    }
+}
+
+function closeModal() {
+    const modal = document.getElementById('successModal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = 'auto'; // Restore scroll
+    }
+}

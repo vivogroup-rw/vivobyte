@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Start a Project | VIVO BYTE</title>
+    <title>Order Now | VIVO BYTE</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -35,7 +35,7 @@
                 <span class="hero-tag">Consultative Approach</span>
                 <h1>Tell Us About Your Vision</h1>
                 <p style="margin-left: auto; margin-right: auto;">Big brands aren't built on code alone. They are built
-                    on strategy. Fill out the form below to start
+                    on strategy. Fill out the form below to place your order and start
                     your discovery phase.</p>
             </div>
 
@@ -43,17 +43,17 @@
                 <div class="form-row">
                     <div class="form-group">
                         <label>Business Name</label>
-                        <input type="text" placeholder="Your Brand Name" required>
+                        <input type="text" name="business_name" placeholder="Your Brand Name" required>
                     </div>
                     <div class="form-group">
                         <label>Contact Email</label>
-                        <input type="email" placeholder="you@domain.com" required>
+                        <input type="email" name="email" placeholder="you@domain.com" required>
                     </div>
                 </div>
 
                 <div class="form-group">
                     <label>Project Type</label>
-                    <select required>
+                    <select name="project_type" required>
                         <option value="" disabled selected>Select a service...</option>
                         <option value="ecommerce">E-Commerce Platform</option>
                         <option value="corporate">Corporate Website / SaaS</option>
@@ -64,14 +64,14 @@
 
                 <div class="form-group">
                     <label>What is your primary goal?</label>
-                    <textarea rows="4"
+                    <textarea name="goals" rows="4"
                         placeholder="e.g., Increase online sales, rebrand for an international audience, etc."></textarea>
                 </div>
 
                 <div class="form-row">
                     <div class="form-group">
                         <label>Estimated Timeline</label>
-                        <select>
+                        <select name="timeline">
                             <option value="asap">ASAP</option>
                             <option value="1-3">1-3 Months</option>
                             <option value="3-6">3-6 Months</option>
@@ -80,7 +80,7 @@
                     </div>
                     <div class="form-group">
                         <label>Budget Range</label>
-                        <select>
+                        <select name="budget">
                             <option value="standard">Standard Project</option>
                             <option value="enterprise">Enterprise Tier</option>
                             <option value="custom">To Be Discussed</option>
@@ -89,6 +89,7 @@
                 </div>
 
                 <button type="submit" class="btn-primary">Submit</button>
+                <p class="trust-message">Your information is safe and never shared.</p>
             </form>
 
             <div class="direct-contact fade-in-up delay-200" style="margin-top: 60px; text-align: center;">
@@ -126,6 +127,19 @@
             </div>
         </div>
     </footer>
+
+    <!-- Success Modal -->
+    <div id="successModal" class="modal">
+        <div class="modal-content fade-in-up">
+            <div class="success-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <h2>Order Received Successfully!</h2>
+            <p>Thank you for trusting VIVO BYTE with your vision. We have received your order details and our strategy
+                team will reach out to you via email shortly to discuss the next steps.</p>
+            <button class="btn-primary" onclick="closeModal()">Great, Thanks!</button>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>
