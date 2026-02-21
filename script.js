@@ -43,6 +43,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Project Discovery Form Handling
     const discoveryForm = document.querySelector('.discovery-form');
+    const successModal = document.getElementById('successModal');
+
     if (discoveryForm) {
         discoveryForm.addEventListener('submit', function (e) {
             e.preventDefault();
@@ -62,8 +64,32 @@ Budget: ${data.budget || 'N/A'}
 
             const mailtoLink = `mailto:vivogroup.rw@gmail.com?subject=New Order Inquiry - ${data.business_name || 'Project'}&body=${encodeURIComponent(emailBody)}`;
 
-            // Revert to Email Method
+            // Set a flag that we're waiting for the user to return from email client
+            sessionStorage.setItem('formSubmissionPending', 'true');
+
+            // Trigger the email client
             window.location.href = mailtoLink;
         });
     }
+
+    // Detect return to page to show success modal
+    window.addEventListener('focus', () => {
+        if (sessionStorage.getItem('formSubmissionPending') === 'true') {
+            if (successModal) {
+                successModal.classList.add('active');
+            }
+            if (discoveryForm) {
+                discoveryForm.reset();
+            }
+            sessionStorage.removeItem('formSubmissionPending');
+        }
+    });
 });
+
+// Modal Control
+function closeModal() {
+    const successModal = document.getElementById('successModal');
+    if (successModal) {
+        successModal.classList.remove('active');
+    }
+}
