@@ -868,6 +868,32 @@ a {
     /* White background for the list */
 }
 
+/* Phone Input Group Styles */
+.phone-input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.country-code-select {
+    flex: 0 0 130px;
+    padding-right: 35px !important;
+    background-position: right 10px center !important;
+}
+
+.phone-input-group input {
+    flex: 1;
+}
+
+@media (max-width: 480px) {
+    .phone-input-group {
+        flex-direction: column;
+    }
+
+    .country-code-select {
+        flex: 1;
+    }
+}
+
 .discovery-form button {
     width: 100%;
     margin-top: 20px;

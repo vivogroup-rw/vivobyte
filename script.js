@@ -1,9 +1,13 @@
 // Custom Cursor Effect
-document.addEventListener('mousemove', (e) => {
+const initCursor = () => {
     const cursor = document.querySelector('.cursor-glow');
-    cursor.style.left = e.clientX + 'px';
-    cursor.style.top = e.clientY + 'px';
-});
+    if (cursor) {
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+    }
+};
 
 // Scroll Animation Observer
 const observerOptions = {
@@ -22,6 +26,7 @@ const observer = new IntersectionObserver((entries, observer) => {
 }, observerOptions);
 
 document.addEventListener('DOMContentLoaded', () => {
+    initCursor();
     const fadeElements = document.querySelectorAll('.fade-in-on-scroll');
     fadeElements.forEach(el => observer.observe(el));
 
@@ -55,7 +60,8 @@ document.addEventListener('DOMContentLoaded', () => {
             // Constructing email body
             const emailBody = `
 Business Name: ${data.business_name || 'N/A'}
-Email: ${data.email || 'N/A'}
+Contact Email: ${data.email || 'N/A'}
+Phone Number: ${data.country_code || ''} ${data.phone || 'N/A'}
 Project Type: ${data.project_type || 'N/A'}
 Goals: ${data.goals || 'N/A'}
 Timeline: ${data.timeline || 'N/A'}
