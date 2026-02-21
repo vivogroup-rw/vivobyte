@@ -55,41 +55,45 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
 
             const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
 
-            // Constructing email body
-            const emailBody = `
-Business Name: ${data.business_name || 'N/A'}
-Contact Email: ${data.email || 'N/A'}
-Phone Number: ${data.country_code || ''} ${data.phone || 'N/A'}
-Project Type: ${data.project_type || 'N/A'}
-Goals: ${data.goals || 'N/A'}
-Timeline: ${data.timeline || 'N/A'}
-Budget: ${data.budget || 'N/A'}
-            `.trim();
+            // Change button text to show progress
+            const submitBtn = discoveryForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
 
-            const mailtoLink = `mailto:vivogroup.rw@gmail.com?subject=New Order Inquiry - ${data.business_name || 'Project'}&body=${encodeURIComponent(emailBody)}`;
-
-            // Set a flag that we're waiting for the user to return from email client
-            sessionStorage.setItem('formSubmissionPending', 'true');
-
-            // Trigger the email client
-            window.location.href = mailtoLink;
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+                .then(async (response) => {
+                    let res = await response.json();
+                    if (response.status == 200) {
+                        if (successModal) {
+                            successModal.classList.add('active');
+                        }
+                        discoveryForm.reset();
+                    } else {
+                        console.log(response);
+                        alert(res.message || "Submission failed. Please try again or use WhatsApp.");
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    alert("Network error. Please check your connection or use WhatsApp.");
+                })
+                .then(function () {
+                    submitBtn.innerHTML = originalBtnText;
+                    submitBtn.disabled = false;
+                });
         });
     }
-
-    // Detect return to page to show success modal
-    window.addEventListener('focus', () => {
-        if (sessionStorage.getItem('formSubmissionPending') === 'true') {
-            if (successModal) {
-                successModal.classList.add('active');
-            }
-            if (discoveryForm) {
-                discoveryForm.reset();
-            }
-            sessionStorage.removeItem('formSubmissionPending');
-        }
-    });
 });
 
 // Modal Control
