@@ -47,57 +47,23 @@ document.addEventListener('DOMContentLoaded', () => {
         discoveryForm.addEventListener('submit', function (e) {
             e.preventDefault();
 
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalText = submitBtn.innerText;
-
-            // UI Feedback
-            submitBtn.innerText = 'Processing...';
-            submitBtn.disabled = true;
-
             const formData = new FormData(this);
             const data = Object.fromEntries(formData.entries());
 
-            // Using Formspree - Direct Email Endpoint
-            fetch('https://formspree.io/vivogroup.rw@gmail.com', {
-                method: 'POST',
-                body: JSON.stringify(data),
-                headers: {
-                    'Accept': 'application/json',
-                    'Content-Type': 'application/json'
-                }
-            }).then(response => {
-                if (response.ok) {
-                    showSuccessModal();
-                    discoveryForm.reset();
-                } else {
-                    return response.json().then(errorData => {
-                        console.error('Submission Error:', errorData);
-                        alert("Submission failed. This usually happens if the form endpoint isn't activated. Please try again later or use WhatsApp.");
-                    });
-                }
-            }).catch(error => {
-                console.error('Fetch Error:', error);
-                alert("Connection error. Please check your internet or reach out via WhatsApp.");
-            }).finally(() => {
-                submitBtn.innerText = originalText;
-                submitBtn.disabled = false;
-            });
+            // Constructing email body
+            const emailBody = `
+Business Name: ${data.business_name || 'N/A'}
+Email: ${data.email || 'N/A'}
+Project Type: ${data.project_type || 'N/A'}
+Goals: ${data.goals || 'N/A'}
+Timeline: ${data.timeline || 'N/A'}
+Budget: ${data.budget || 'N/A'}
+            `.trim();
+
+            const mailtoLink = `mailto:vivogroup.rw@gmail.com?subject=New Order Inquiry - ${data.business_name || 'Project'}&body=${encodeURIComponent(emailBody)}`;
+
+            // Revert to Email Method
+            window.location.href = mailtoLink;
         });
     }
 });
-
-function showSuccessModal() {
-    const modal = document.getElementById('successModal');
-    if (modal) {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent scroll
-    }
-}
-
-function closeModal() {
-    const modal = document.getElementById('successModal');
-    if (modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = 'auto'; // Restore scroll
-    }
-}
