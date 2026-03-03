@@ -4,29 +4,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Vivo Byte – Web Development Company in Rwanda</title>
-<meta name="description" content="Get in touch with Vivo Byte, a leading web development company in Rwanda. Contact us for website projects, web design, and business solutions.">
-<meta name="keywords" content="Contact Vivo Byte, web development Rwanda, website design Rwanda, professional websites">
-<meta property="og:title" content="Contact Vivo Byte – Web Development Company in Rwanda">
-<meta property="og:description" content="Get in touch with Vivo Byte, a leading web development company in Rwanda. Contact us for website projects, web design, and business solutions.">
-<meta property="og:url" content="https://vivobyte.site/contact.html">
-<meta property="og:type" content="website">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Space+Grotesk:wght@300;400;600&display=swap"
-        rel="stylesheet">
+    <title>Get Started | VIVO BYTE</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 
 <body class="subpage">
-    <div class="cursor-glow"></div>
 
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">VIVO BYTE<span class="dot">.</span></a>
+    <div class="cursor-glow" id="cursor-glow"></div>
+
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">VIVO BYTE<span>.</span></a>
             <ul class="nav-links">
                 <li><a href="index.html#services">Services</a></li>
                 <li><a href="index.html#process">Process</a></li>
@@ -35,38 +28,41 @@
         </div>
     </nav>
 
-    <section class="discovery">
+    <section class="discovery" style="padding-top: 150px;">
         <div class="container">
-            <div class="hero-content fade-in-up"
-                style="text-align: center; margin: 0 auto 40px auto; padding-top: 100px;">
+            <div class="hero-content" style="text-align: center; max-width: 800px; margin: 0 auto 60px auto;">
                 <span class="hero-tag">Consultative Approach</span>
-                <h1>Tell Us About Your Vision</h1>
-                <p style="margin-left: auto; margin-right: auto;">Big brands aren't built on code alone. They are built
-                    on strategy. Fill out the form below to get started and start
-                    your discovery phase.</p>
+                <h1 class="gradient-text">Tell Us About Your Vision</h1>
+                <p>Big brands aren't built on code alone. They are built on strategy. Fill out the form below to get
+                    started and start your discovery phase.</p>
             </div>
 
-            <form class="discovery-form fade-in-up delay-100">
+            <form class="discovery-form glass-card" style="max-width: 800px; margin: 0 auto; padding: 40px;">
                 <!-- Web3Forms Configurations -->
                 <input type="hidden" name="access_key" value="1ff9340a-f84f-4c9d-9495-9d201e0f0a95">
                 <input type="hidden" name="subject" value="New Project Inquiry - VIVO BYTE">
                 <input type="hidden" name="from_name" value="VIVO BYTE Discovery Form">
                 <input type="hidden" name="redirect" value="https://web3forms.com/success">
-                <div class="form-row">
+
+                <div class="form-row"
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px;">
                     <div class="form-group">
-                        <label>Business Name</label>
-                        <input type="text" name="business_name" placeholder="Your Brand Name" required>
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600;">Business Name</label>
+                        <input type="text" name="business_name" placeholder="Your Brand Name" required
+                            style="width: 100%; padding: 12px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff;">
                     </div>
                     <div class="form-group">
-                        <label>Contact Email</label>
-                        <input type="email" name="email" placeholder="you@domain.com" required>
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600;">Contact Email</label>
+                        <input type="email" name="email" placeholder="you@domain.com" required
+                            style="width: 100%; padding: 12px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff;">
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label>Phone Number</label>
-                    <div class="phone-input-group">
-                        <select name="country_code" class="country-code-select" required>
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600;">Phone Number</label>
+                    <div class="phone-input-group" style="display: flex; gap: 10px;">
+                        <select name="country_code"
+                            style="padding: 12px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff;">
                             <option value="+250" selected>RW (+250)</option>
                             <option value="+254">KE (+254)</option>
                             <option value="+256">UG (+256)</option>
@@ -75,13 +71,15 @@
                             <option value="+44">UK (+44)</option>
                             <option value="+971">UAE (+971)</option>
                         </select>
-                        <input type="tel" name="phone" placeholder="780 000 000" required>
+                        <input type="tel" name="phone" placeholder="780 000 000" required
+                            style="flex-grow: 1; padding: 12px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff;">
                     </div>
                 </div>
 
-                <div class="form-group">
-                    <label>Project Type</label>
-                    <select name="project_type" required>
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600;">Project Type</label>
+                    <select name="project_type" required
+                        style="width: 100%; padding: 12px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff;">
                         <option value="" disabled selected>Select a service...</option>
                         <option value="ecommerce">E-Commerce Platform</option>
                         <option value="corporate">Corporate Website / SaaS</option>
@@ -90,16 +88,20 @@
                     </select>
                 </div>
 
-                <div class="form-group">
-                    <label>What is your primary goal?</label>
+                <div class="form-group" style="margin-bottom: 20px;">
+                    <label style="display: block; margin-bottom: 8px; font-weight: 600;">What is your primary
+                        goal?</label>
                     <textarea name="goals" rows="4"
-                        placeholder="e.g., Increase online sales, rebrand for an international audience, etc."></textarea>
+                        placeholder="e.g., Increase online sales, rebrand for an international audience, etc."
+                        style="width: 100%; padding: 12px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff; resize: vertical;"></textarea>
                 </div>
 
-                <div class="form-row">
+                <div class="form-row"
+                    style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 30px;">
                     <div class="form-group">
-                        <label>Estimated Timeline</label>
-                        <select name="timeline">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600;">Estimated Timeline</label>
+                        <select name="timeline"
+                            style="width: 100%; padding: 12px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff;">
                             <option value="asap">ASAP</option>
                             <option value="1-3">1-3 Months</option>
                             <option value="3-6">3-6 Months</option>
@@ -107,8 +109,9 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label>Budget Range</label>
-                        <select name="budget">
+                        <label style="display: block; margin-bottom: 8px; font-weight: 600;">Budget Range</label>
+                        <select name="budget"
+                            style="width: 100%; padding: 12px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff;">
                             <option value="standard">Standard Project</option>
                             <option value="enterprise">Enterprise Tier</option>
                             <option value="custom">To Be Discussed</option>
@@ -116,66 +119,60 @@
                     </div>
                 </div>
 
-                <button type="submit" class="btn-primary">Submit</button>
-                <p class="trust-message">Your information is safe and never shared.</p>
+                <button type="submit" class="btn-premium" style="width: 100%; padding: 16px;">Submit
+                    Application</button>
+                <p style="text-align: center; margin-top: 15px; color: var(--text-muted); font-size: 0.85rem;">Your
+                    information is safe and never shared.</p>
             </form>
 
-            <div class="direct-contact fade-in-up delay-200" style="margin-top: 60px; text-align: center;">
-                <p style="color: var(--text-secondary); margin-bottom: 20px;">Need immediate assistance?</p>
+            <div class="direct-contact" style="margin-top: 60px; text-align: center; padding-bottom: 100px;">
+                <p style="color: var(--text-muted); margin-bottom: 30px;">Need immediate assistance?</p>
                 <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
-                    <a href="https://wa.me/250790318148" target="_blank" class="contact-card">
+                    <a href="https://wa.me/250790318148" target="_blank" class="glass-card"
+                        style="padding: 20px 40px; text-decoration: none;">
                         <i class="fa-brands fa-whatsapp"
-                            style="font-size: 2rem; color: #25D366; margin-bottom: 10px;"></i>
-                        <span style="display: block; font-weight: 600;">WhatsApp</span>
-                        <span style="color: var(--text-secondary); font-size: 0.9rem;">+250 790 318 148</span>
+                            style="font-size: 2rem; color: #25D366; margin-bottom: 10px; display: block;"></i>
+                        <span style="display: block; font-weight: 600; color: #fff;">WhatsApp</span>
+                        <span style="color: var(--text-muted); font-size: 0.9rem;">+250 790 318 148</span>
                     </a>
-                    <a href="mailto:vivogroup.rw@gmail.com" class="contact-card">
+                    <a href="mailto:vivogroup.rw@gmail.com" class="glass-card"
+                        style="padding: 20px 40px; text-decoration: none;">
                         <i class="fa-regular fa-envelope"
-                            style="font-size: 2rem; color: var(--accent-secondary); margin-bottom: 10px;"></i>
-                        <span style="display: block; font-weight: 600;">Email</span>
-                        <span style="color: var(--text-secondary); font-size: 0.9rem;">vivogroup.rw@gmail.com</span>
+                            style="font-size: 2rem; color: var(--accent-primary); margin-bottom: 10px; display: block;"></i>
+                        <span style="display: block; font-weight: 600; color: #fff;">Email</span>
+                        <span style="color: var(--text-muted); font-size: 0.9rem;">vivogroup.rw@gmail.com</span>
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <p>&copy; 2026 VIVO BYTE. All Rights Reserved.</p>
-                </div>
-                <div class="footer-contact">
-                    <a href="mailto:vivogroup.rw@gmail.com"><i class="fa-regular fa-envelope"></i>
-                        vivogroup.rw@gmail.com</a>
-                    <a href="https://wa.me/250790318148" target="_blank"><i class="fa-brands fa-whatsapp"></i> +250 790
-                        318 148</a>
-                </div>
-            </div>
+    <footer style="padding: 60px 0; border-top: 1px solid var(--glass-border);">
+        <div class="container"
+            style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px;">
+            <p style="color: var(--text-muted)">&copy; 2026 VIVO BYTE. All Rights Reserved.</p>
         </div>
     </footer>
 
-
-
-    <script src="script.js"></script>
-
     <!-- Success Modal -->
-    <div id="successModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-icon" style="color: #28c940; margin-bottom: 5px;">
-                <i class="fas fa-check-circle"></i>
-            </div>
-            <div style="font-weight: 800; color: #28c940; font-size: 1.2rem; margin-bottom: 25px;">DONE!</div>
-            <h2>Form Received!</h2>
-            <p>We've received your inquiry details. Our team will reach out to you via email shortly to discuss the next
-                steps.</p>
-            <p class="sub-text">If you don't hear from us within 24 hours, please feel free to reach out directly via
-                WhatsApp or Email below.</p>
-            <button onclick="closeModal()" class="btn-primary">Back to Form</button>
+    <div id="successModal" class="modal"
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); display: none; align-items: center; justify-content: center; z-index: 2000; padding: 20px;">
+        <div class="glass-card" style="max-width: 500px; text-align: center; padding: 50px;">
+            <div style="color: #28c940; font-size: 4rem; margin-bottom: 20px;"><i class="fas fa-check-circle"></i></div>
+            <h2 style="margin-bottom: 15px;">Form Received!</h2>
+            <p style="color: var(--text-muted); margin-bottom: 30px;">We've received your inquiry. Our team will reach
+                out shortly to discuss the next steps.</p>
+            <button onclick="closeModal()" class="btn-premium">Back to Form</button>
         </div>
     </div>
-</body>
 
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <style>
+        .modal.active {
+            display: flex !important;
+        }
+    </style>
+</body>
 
 </html>
