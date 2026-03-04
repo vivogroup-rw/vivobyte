@@ -157,3 +157,37 @@ function closePortfolioModal() {
         document.body.style.overflow = ''; // Restore scroll
     }
 }
+
+// Contact Choice Modal Control
+function openContactChoiceModal() {
+    const modal = document.getElementById('contactChoiceModal');
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeContactChoiceModal() {
+    const modal = document.getElementById('contactChoiceModal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
+
+// Contact Choice Modal Control
+function openContactChoiceModal() {
+    const modal = document.getElementById('contactChoiceModal');
+    if (modal) {
+        modal.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+function closeContactChoiceModal() {
+    const modal = document.getElementById('contactChoiceModal');
+    if (modal) {
+        modal.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+}
