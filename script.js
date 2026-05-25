@@ -129,16 +129,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     // Floating CTA Logic
     const floatingCTA = document.getElementById('floatingCTA');
-    const journeySection = document.getElementById('journey');
+    const whatWeDoSection = document.getElementById('what-we-do');
     const contactSection = document.getElementById('contact');
 
-    if (floatingCTA && journeySection && contactSection) {
+    if (floatingCTA && whatWeDoSection && contactSection) {
         window.addEventListener('scroll', () => {
-            const journeyTop = journeySection.offsetTop;
+            const whatWeDoTop = whatWeDoSection.offsetTop;
             const contactTop = contactSection.offsetTop;
-            const scrollPos = window.scrollY + window.innerHeight * 0.8; // Trigger a bit earlier
+            const scrollPos = window.scrollY + window.innerHeight * 0.8;
 
-            if (scrollPos > journeyTop && window.scrollY < contactTop - 100) {
+            if (scrollPos > whatWeDoTop && window.scrollY < contactTop - 100) {
                 floatingCTA.classList.add('active');
             } else {
                 floatingCTA.classList.remove('active');
