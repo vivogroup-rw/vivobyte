@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Navbar Scroll Effect
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
+        const threshold = window.innerHeight * 0.8;
+        if (window.scrollY > threshold) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
@@ -126,6 +127,24 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+    // Floating CTA Logic
+    const floatingCTA = document.getElementById('floatingCTA');
+    const journeySection = document.getElementById('journey');
+    const contactSection = document.getElementById('contact');
+
+    if (floatingCTA && journeySection && contactSection) {
+        window.addEventListener('scroll', () => {
+            const journeyTop = journeySection.offsetTop;
+            const contactTop = contactSection.offsetTop;
+            const scrollPos = window.scrollY + window.innerHeight * 0.8; // Trigger a bit earlier
+
+            if (scrollPos > journeyTop && window.scrollY < contactTop - 100) {
+                floatingCTA.classList.add('active');
+            } else {
+                floatingCTA.classList.remove('active');
+            }
+        });
+    }
 });
 
 // Modal Control
@@ -155,39 +174,5 @@ function closePortfolioModal() {
     if (modal) {
         modal.classList.remove('active');
         document.body.style.overflow = ''; // Restore scroll
-    }
-}
-
-// Contact Choice Modal Control
-function openContactChoiceModal() {
-    const modal = document.getElementById('contactChoiceModal');
-    if (modal) {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-}
-
-function closeContactChoiceModal() {
-    const modal = document.getElementById('contactChoiceModal');
-    if (modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-}
-
-// Contact Choice Modal Control
-function openContactChoiceModal() {
-    const modal = document.getElementById('contactChoiceModal');
-    if (modal) {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
-}
-
-function closeContactChoiceModal() {
-    const modal = document.getElementById('contactChoiceModal');
-    if (modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
     }
 }

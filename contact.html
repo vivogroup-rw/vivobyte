@@ -4,13 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Vivo Byte – Web Development Company in Rwanda</title>
-<meta name="description" content="Get in touch with Vivo Byte, a leading web development company in Rwanda. Contact us for website projects, web design, and business solutions.">
-<meta name="keywords" content="Contact Vivo Byte, web development Rwanda, website design Rwanda, professional websites">
-<meta property="og:title" content="Contact Vivo Byte – Web Development Company in Rwanda">
-<meta property="og:description" content="Get in touch with Vivo Byte, a leading web development company in Rwanda. Contact us for website projects, web design, and business solutions.">
-<meta property="og:url" content="https://vivobyte.site/contact.html">
-<meta property="og:type" content="website">
+    <title>Let's Talk | VIVO BYTE</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="styles.css">
@@ -31,131 +25,94 @@
             <a href="index.html" class="logo">VIVO BYTE<span>.</span></a>
             <ul class="nav-links">
                 <li><a href="index.html#services">Services</a></li>
-                <li><a href="index.html#process">Process</a></li>
-                <li><a href="index.html#work">Portfolio</a></li>
+                <li><a href="index.html#work">Solutions</a></li>
+                <li><a href="index.html#technology">Technology</a></li>
+                <li><a href="blog.html">Blog</a></li>
                 <li><a href="javascript:void(0)" onclick="openContactChoiceModal()">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <section class="discovery" style="padding-top: 150px;">
-        <div class="container">
-            <div class="hero-content" style="text-align: center; max-width: 800px; margin: 0 auto 60px auto;">
-                <span class="hero-tag">Consultative Approach</span>
-                <h1 class="gradient-text">Tell Us About Your Vision</h1>
+    <!-- Full-page contact layout inspired by Airnauts -->
+    <section class="contact-page-section">
+        <div class="contact-page-inner">
 
+            <!-- LEFT PANEL: Info -->
+            <div class="contact-info-panel">
+                <p class="contact-info-sub">Send us an email at<br>
+                    <a href="mailto:vivogroup.rw@gmail.com">vivogroup.rw@gmail.com</a><br>
+                    or fill in the form.
+                </p>
+
+                <div class="contact-offices">
+                    <div class="contact-office">
+                        <span class="office-city">Kigali</span>
+                        <span class="office-address">Kigali, Rwanda</span>
+                    </div>
+                    <div class="contact-office">
+                        <span class="office-city">WhatsApp</span>
+                        <span class="office-address">+250 790 318 148</span>
+                    </div>
+                </div>
             </div>
 
-            <form class="discovery-form glass-card" style="max-width: 800px; margin: 0 auto; padding: 40px;">
-                <!-- Web3Forms Configurations -->
-                <input type="hidden" name="access_key" value="1ff9340a-f84f-4c9d-9495-9d201e0f0a95">
-                <input type="hidden" name="subject" value="New Project Inquiry - VIVO BYTE">
-                <input type="hidden" name="from_name" value="VIVO BYTE Discovery Form">
-                <input type="hidden" name="redirect" value="https://web3forms.com/success">
+            <!-- RIGHT PANEL: Form -->
+            <div class="contact-form-panel">
+                <h1 class="contact-form-heading">let's talk</h1>
 
-                <div class="form-row-stacked">
-                    <div class="form-group">
-                        <label style="display: block; margin-bottom: 8px; font-weight: 600;">Business Name</label>
-                        <input type="text" name="business_name" placeholder="Your Brand Name" required
-                            style="width: 100%; padding: 12px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff;">
+                <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                    <!-- Web3Forms -->
+                    <input type="hidden" name="access_key" value="1ff9340a-f84f-4c9d-9495-9d201e0f0a95">
+                    <input type="hidden" name="subject" value="New Project Inquiry - VIVO BYTE">
+                    <input type="hidden" name="from_name" value="VIVO BYTE Contact Form">
+                    <input type="hidden" name="redirect" value="https://web3forms.com/success">
+
+                    <div class="airnauts-form">
+                        <div class="airnauts-field">
+                            <input type="text" name="name" placeholder="Name" required class="airnauts-input">
+                        </div>
+                        <div class="airnauts-field">
+                            <input type="email" name="email" placeholder="Email" required class="airnauts-input">
+                        </div>
+                        <div class="airnauts-field">
+                            <input type="tel" name="phone" placeholder="Phone" required class="airnauts-input">
+                        </div>
+                        <div class="airnauts-field">
+                            <textarea name="project_details" placeholder="Tell us about your project" rows="4" required
+                                class="airnauts-input"></textarea>
+                        </div>
+                        <div class="airnauts-field">
+                            <select name="referral" class="airnauts-input">
+                                <option value="" disabled selected>How did you find us?</option>
+                                <option value="google">Google Search</option>
+                                <option value="social">Social Media</option>
+                                <option value="referral">Referral / Word of Mouth</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="airnauts-privacy">
+                            <label class="airnauts-checkbox-label">
+                                <input type="checkbox" name="privacy" required>
+                                <span>I accept the <a href="#">privacy policy</a></span>
+                            </label>
+                        </div>
+                        <div class="airnauts-submit-row">
+                            <button type="submit" class="airnauts-send-btn">
+                                send <span class="airnauts-arrow">→</span>
+                            </button>
+                            <label class="airnauts-attach-label">
+                                <i class="fa-solid fa-paperclip"></i> attach a file
+                                <input type="file" name="attachment" style="display:none">
+                            </label>
+                        </div>
                     </div>
-                    <div class="form-group">
-                        <label style="display: block; margin-bottom: 8px; font-weight: 600;">Contact Email</label>
-                        <input type="email" name="email" placeholder="you@domain.com" required
-                            style="width: 100%; padding: 12px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff;">
-                    </div>
-                </div>
-
-                <div class="form-group" style="margin-bottom: 20px;">
-                    <label style="display: block; margin-bottom: 8px; font-weight: 600;">Phone Number</label>
-                    <div class="phone-input-group">
-                        <select name="country_code" class="small-select">
-                            <option value="+250" selected>🇷🇼 RW (+250)</option>
-                            <option value="+254">🇰🇪 KE (+254)</option>
-                            <option value="+256">🇺🇬 UG (+256)</option>
-                            <option value="+255">🇹🇿 TZ (+255)</option>
-                            <option value="+1">🇺🇸 US (+1)</option>
-                            <option value="+44">🇬🇧 UK (+44)</option>
-                            <option value="+971">🇦🇪 UAE (+971)</option>
-                        </select>
-                        <input type="tel" name="phone" placeholder="780 000 000" required
-                            style="flex-grow: 1; min-width: 0; padding: 12px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff;">
-                    </div>
-                </div>
-
-                <div class="form-group" style="margin-bottom: 20px;">
-                    <label style="display: block; margin-bottom: 8px; font-weight: 600;">Project Type</label>
-                    <select name="project_type" required
-                        style="width: 100%; padding: 12px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff;">
-                        <option value="" disabled selected>Select a service...</option>
-                        <option value="ecommerce">E-Commerce Platform</option>
-                        <option value="corporate">Corporate Website / SaaS</option>
-                        <option value="branding">Creative Branding & Design</option>
-                        <option value="custom">Custom Web Application</option>
-                    </select>
-                </div>
-
-
-
-                <div class="form-row-force-side">
-                    <div class="form-group">
-                        <label style="display: block; margin-bottom: 8px; font-weight: 600;">Timeline</label>
-                        <select name="timeline"
-                            style="width: 100%; padding: 12px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff;">
-                            <option value="asap">ASAP</option>
-                            <option value="1-3">1-3 Months</option>
-                            <option value="3-6">3-6 Months</option>
-                            <option value="planning">Just Planning</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label style="display: block; margin-bottom: 8px; font-weight: 600;">Budget</label>
-                        <select name="budget"
-                            style="width: 100%; padding: 12px; border-radius: 8px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: #fff;">
-                            <option value="standard">Standard Project</option>
-                            <option value="enterprise">Enterprise Tier</option>
-                            <option value="custom">To Be Discussed</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group verification-group">
-                    <label class="checkbox-container">
-                        <input type="checkbox" name="human_verify" required>
-                        <span class="checkmark"></span>
-                        <span class="checkbox-text">I am not a robot</span>
-                    </label>
-                </div>
-
-                <button type="submit" class="btn-premium" style="width: 100%; padding: 16px;">Submit
-                    Application</button>
-                <p style="text-align: center; margin-top: 15px; color: var(--text-muted); font-size: 0.85rem;">Your
-                    information is safe and never shared.</p>
-            </form>
-
-            <div class="direct-contact" style="margin-top: 60px; text-align: center; padding-bottom: 100px;">
-                <p style="color: var(--text-muted); margin-bottom: 30px;">Need immediate assistance?</p>
-                <div style="display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;">
-                    <a href="https://wa.me/250790318148" target="_blank" class="glass-card"
-                        style="padding: 20px 40px; text-decoration: none;">
-                        <i class="fa-brands fa-whatsapp"
-                            style="font-size: 2rem; color: #25D366; margin-bottom: 10px; display: block;"></i>
-                        <span style="display: block; font-weight: 600; color: #fff;">WhatsApp</span>
-                        <span style="color: var(--text-muted); font-size: 0.9rem;">+250 790 318 148</span>
-                    </a>
-                    <a href="mailto:vivogroup.rw@gmail.com" class="glass-card"
-                        style="padding: 20px 40px; text-decoration: none;">
-                        <i class="fa-regular fa-envelope"
-                            style="font-size: 2rem; color: var(--accent-primary); margin-bottom: 10px; display: block;"></i>
-                        <span style="display: block; font-weight: 600; color: #fff;">Email</span>
-                        <span style="color: var(--text-muted); font-size: 0.9rem;">vivogroup.rw@gmail.com</span>
-                    </a>
-                </div>
+                </form>
             </div>
+
         </div>
     </section>
 
-    <footer style="padding: 60px 0; border-top: 1px solid var(--glass-border);">
+    <footer style="padding: 40px 0; border-top: 1px solid var(--glass-border);">
         <div class="container footer-layout">
             <p class="copyright">&copy; 2026 VIVO BYTE. All Rights Reserved.</p>
             <div class="footer-links" style="display: flex; gap: 30px;">
@@ -173,10 +130,37 @@
         style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); display: none; align-items: center; justify-content: center; z-index: 2000; padding: 20px;">
         <div class="glass-card" style="max-width: 500px; text-align: center; padding: 50px;">
             <div style="color: #28c940; font-size: 4rem; margin-bottom: 20px;"><i class="fas fa-check-circle"></i></div>
-            <h2 style="margin-bottom: 15px;">Form Received!</h2>
-            <p style="color: var(--text-muted); margin-bottom: 30px;">We've received your inquiry. Our team will reach
-                out shortly to discuss the next steps.</p>
-            <button onclick="closeModal()" class="btn-premium">Back to Form</button>
+            <h2 style="margin-bottom: 15px;">Message Sent!</h2>
+            <p style="color: var(--text-muted); margin-bottom: 30px;">We've received your message. Our team will reach
+                out shortly.</p>
+            <button onclick="closeModal()" class="airnauts-send-btn">go back <span
+                    class="airnauts-arrow">→</span></button>
+        </div>
+    </div>
+
+    <!-- Contact Choice Modal -->
+    <div id="contactChoiceModal" class="modal">
+        <div class="modal-close" onclick="closeContactChoiceModal()">&times;</div>
+        <div class="modal-container choice-modal">
+            <div class="modal-header">
+                <h3>Contact Expert</h3>
+            </div>
+            <div class="modal-body choices">
+                <a href="mailto:vivogroup.rw@gmail.com" class="choice-card">
+                    <i class="fa-regular fa-envelope"></i>
+                    <div class="choice-info">
+                        <strong>Email Us</strong>
+                        <span>vivogroup.rw@gmail.com</span>
+                    </div>
+                </a>
+                <a href="https://wa.me/250790318148" target="_blank" class="choice-card">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <div class="choice-info">
+                        <strong>WhatsApp</strong>
+                        <span>+250 790 318 148</span>
+                    </div>
+                </a>
+            </div>
         </div>
     </div>
 
@@ -188,6 +172,5 @@
         }
     </style>
 </body>
-
 
 </html>

@@ -1,42 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | VIVO BYTE</title>
+    <meta name="description"
+        content="Insights on conversion-focused design, custom web development, and workflow automation.">
 
-  <title>Top Web Design Trends for Rwandan Businesses – Vivo Byte</title>
-  <meta name="description" content="Discover the top web design trends for Rwandan businesses in 2026. Learn how Vivo Byte creates modern, high-performance websites for your company.">
-  <meta name="keywords" content="web design trends Rwanda, Vivo Byte blog, website development Rwanda, business websites">
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles.css">
 
-  <meta property="og:title" content="Top Web Design Trends for Rwandan Businesses – Vivo Byte">
-  <meta property="og:description" content="Discover the top web design trends for Rwandan businesses in 2026. Learn how Vivo Byte creates modern, high-performance websites for your company.">
-  <meta property="og:url" content="https://vivobyte.site/blog.html">
-  <meta property="og:type" content="article">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
-<body>
-  <header>
-    <h1>Top Web Design Trends for Rwandan Businesses in 2026</h1>
-  </header>
 
-  <main>
-    <p>At <strong>Vivo Byte</strong>, we help Rwandan businesses create modern websites that attract and engage customers. Here are the top web design trends for 2026 that every Rwandan business should follow:</p>
+<body class="subpage">
 
-    <h2>1. Mobile-Friendly Design</h2>
-    <p>Most people in Rwanda browse websites on mobile devices. Your website must look great on phones and tablets. At Vivo Byte, we make sure your site is fully responsive and easy to navigate.</p>
+    <div class="cursor-glow" id="cursor-glow"></div>
 
-    <h2>2. Fast Loading Speed</h2>
-    <p>Websites that load quickly keep visitors longer and improve your search ranking. We optimize images, compress files, and write clean code to make your site lightning fast.</p>
+    <nav class="navbar scrolled" id="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo">VIVO BYTE<span>.</span></a>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul class="nav-links" id="nav-menu">
+                <li><a href="index.html#services">Services</a></li>
+                <li><a href="index.html#work">Solutions</a></li>
+                <li><a href="index.html#technology">Technology</a></li>
+                <li><a href="blog.html" style="color: var(--text-main);">Blog</a></li>
+                <li><a href="javascript:void(0)" onclick="openContactChoiceModal()">Contact</a></li>
+                <li><a href="contact.html" class="btn-premium">let's talk</a></li>
+            </ul>
+        </div>
+    </nav>
 
-    <h2>3. Clean & Modern Layout</h2>
-    <p>Minimalist, modern designs with clear navigation make your website more user-friendly. Customers trust businesses with websites that look professional and organized.</p>
+    <header style="padding-top: 150px; padding-bottom: 60px;">
+        <div class="container">
+            <div class="hero-content" style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <span class="hero-tag">Insights & Expertise</span>
+                <h1 class="gradient-text">The VIVO BYTE Blog</h1>
+                <p style="margin: 0 auto;">Exploring the intersection of code, conversion, and business growth.</p>
+            </div>
+        </div>
+    </header>
 
-    <h2>4. SEO-Friendly Structure</h2>
-    <p>Using proper headings, meta descriptions, and keywords ensures your site appears in Google searches. Our team at Vivo Byte implements SEO best practices for every website.</p>
+    <section class="blog-posts">
+        <div class="container">
+            <div class="services-grid">
+                <article class="glass-card">
+                    <div
+                        style="color: var(--accent-primary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px;">
+                        Development</div>
+                    <h3>Designing for Higher Conversions</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 25px;">Learn how we use behavioral psychology and
+                        clean code to drive more sales for our clients.</p>
+                    <a href="#" style="color: var(--accent-primary); font-weight: 600;">Read More <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </article>
 
-    <h2>5. Quality Content</h2>
-    <p>Adding relevant content, blogs, and service descriptions helps your website rank higher. We can help you write content that speaks to your customers and improves your online presence.</p>
+                <article class="glass-card">
+                    <div
+                        style="color: var(--accent-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px;">
+                        Data & Analytics</div>
+                    <h3>Mastering SQL Case Studies</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 25px;">Why database optimization is the secret
+                        sauce for high-performance enterprise dashboards.</p>
+                    <a href="#" style="color: var(--accent-primary); font-weight: 600;">Read More <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </article>
 
-    <p>At Vivo Byte, we combine these trends to deliver high-performance websites for Rwandan businesses. <strong>Contact us today</strong> to create a website that grows your business and impresses your customers!</p>
-  </main>
+                <article class="glass-card">
+                    <div
+                        style="color: var(--accent-tertiary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 15px;">
+                        Automation</div>
+                    <h3>Automating Business Workflows</h3>
+                    <p style="color: var(--text-muted); margin-bottom: 25px;">How to save 20+ hours a week by
+                        integrating your web apps with backend systems.</p>
+                    <a href="#" style="color: var(--accent-primary); font-weight: 600;">Read More <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <footer style="padding: 60px 0; border-top: 1px solid var(--glass-border);">
+        <div class="container footer-layout">
+            <p class="copyright">&copy; 2026 VIVO BYTE. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="mailto:vivogroup.rw@gmail.com"><i class="fa-regular fa-envelope"></i>
+                    vivogroup.rw@gmail.com</a>
+                <a href="https://wa.me/250790318148" target="_blank"><i class="fa-brands fa-whatsapp"></i> +250 790 318
+                    148</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Contact Choice Modal -->
+    <div id="contactChoiceModal" class="modal">
+        <div class="modal-close" onclick="closeContactChoiceModal()">&times;</div>
+        <div class="modal-container choice-modal">
+            <div class="modal-header">
+                <h3>Contact Expert</h3>
+            </div>
+            <div class="modal-body choices">
+                <a href="mailto:vivogroup.rw@gmail.com" class="choice-card">
+                    <i class="fa-regular fa-envelope"></i>
+                    <div class="choice-info">
+                        <strong>Email Us</strong>
+                        <span>vivogroup.rw@gmail.com</span>
+                    </div>
+                </a>
+                <a href="https://wa.me/250790318148" target="_blank" class="choice-card">
+                    <i class="fa-brands fa-whatsapp"></i>
+                    <div class="choice-info">
+                        <strong>WhatsApp</strong>
+                        <span>+250 790 318 148</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+    <style>
+        .modal.active {
+            display: flex !important;
+        }
+    </style>
 </body>
+
 </html>
